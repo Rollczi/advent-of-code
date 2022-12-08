@@ -12,7 +12,7 @@ public class Day01 {
 
     public static void main(String[] args) throws FileNotFoundException {
         ElfRegistry registry = new ElfRegistry();
-        Scanner scanner = new Scanner(new FileReader("2022/resources/day1/input.txt"));
+        Scanner scanner = new Scanner(new FileReader("2022/resources/day-01.txt"));
 
         Elf elf = registry.createElf();
 
