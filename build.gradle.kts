@@ -44,4 +44,17 @@ subprojects {
         useJUnitPlatform()
     }
 
+    // add task to start class with main method
+    // example: gradle run -Pday=1
+    tasks.register("run", JavaExec::class.java) {
+        group = "application"
+        description = "Runs this project as a Java application."
+
+        classpath = sourceSets.main.get().runtimeClasspath
+
+        mainClass.set("dev.rollczi.adventofcode" + this@subprojects.name + ".day" + project.findProperty("day") + ".Day" + project.findProperty("day"))
+        workingDir = workingDir.parentFile
+    }
+
+
 }
